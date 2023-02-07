@@ -10,13 +10,11 @@
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
     <bean id="musicBean"
-          class="org.example.springCourse.RockMusic">
-    </bean>
-
-    <bean id="musicPlayer" class="org.example.springCourse.MusicPlayer">
-        <property name="music" ref="musicBean"/>
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPLayer.volume}"/>
+          class="org.example.springCourse.ClassicalMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"
+          factory-method="getClassicalMusic"
+    >
     </bean>
 
 
